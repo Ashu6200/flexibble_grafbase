@@ -1,6 +1,9 @@
 import { g, auth, config } from '@grafbase/sdk'
 
-const User: any = g.model('User', {
+
+
+// @ts-ignore
+const User  = g.model('User', {
   name: g.string().length({ min: 2, max: 100 }),
   email: g.string().unique(),
   avatarUrl: g.url(),
@@ -12,8 +15,8 @@ const User: any = g.model('User', {
   rules.public().read()
 })
 
-
-const Project : any  = g.model('Project', {
+// @ts-ignore
+const Project = g.model('Project', {
   title: g.string().length({ min: 3 }),
   description: g.string(), 
   image: g.url(),
