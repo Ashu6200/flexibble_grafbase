@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Inter;
+}
+
+.flexCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexBetween {
+  @apply flex justify-between items-center;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+.text-small {
+  @apply text-sm font-medium;
+}
+
+.navbar {
+  @apply py-5 px-8 border-b border-nav-border gap-4;
+}
+
+.footer {
+  @apply flex-col w-full gap-20 bg-light-white;
+}
+
+
+.footer_column {
+  @apply flex-1 flex flex-col gap-3 text-sm min-w-max;
+}
+
+/* Form Field */
+.form_field-input {
+  @apply w-full outline-0 bg-light-white-100 rounded-xl p-4;
 }
